@@ -568,6 +568,15 @@ Default: `[]`
 List of rust-analyzer diagnostics to disable.
 
 
+## rust-analyzer.diagnostics.eagerInvalidation {#diagnostics.eagerInvalidation}
+
+Default: `false`
+
+Clear native diagnostics for a file as soon as its content changes, before
+reanalysis completes. This prevents stale diagnostics from lingering between
+an edit and the next analysis pass.
+
+
 ## rust-analyzer.diagnostics.enable {#diagnostics.enable}
 
 Default: `true`

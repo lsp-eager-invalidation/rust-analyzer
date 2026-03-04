@@ -121,10 +121,10 @@ pub(crate) fn handle_did_change_text_document(
         if *data != new_contents {
             data.clone_from(&new_contents);
             state.vfs.write().0.set_file_contents(path.clone(), Some(new_contents));
-            if state.config.eager_diagnostic_invalidation() {
-                if let Some((file_id, _)) = state.vfs.read().0.file_id(&path) {
-                    state.diagnostics.clear_native_for(file_id);
-                }
+            if state.config.eager_diagnostic_invalidation()
+                && let Some((file_id, _)) = state.vfs.read().0.file_id(&path)
+            {
+                state.diagnostics.clear_native_for(file_id);
             }
         }
     }

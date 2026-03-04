@@ -1528,6 +1528,16 @@
             {
                 "title": "Diagnostics",
                 "properties": {
+                    "rust-analyzer.diagnostics.eagerInvalidation": {
+                        "markdownDescription": "Clear native diagnostics for a file as soon as its content changes, before\nreanalysis completes. This prevents stale diagnostics from lingering between\nan edit and the next analysis pass.",
+                        "default": false,
+                        "type": "boolean"
+                    }
+                }
+            },
+            {
+                "title": "Diagnostics",
+                "properties": {
                     "rust-analyzer.diagnostics.enable": {
                         "markdownDescription": "Show native rust-analyzer diagnostics.",
                         "default": true,
